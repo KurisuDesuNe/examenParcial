@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+        <title>Tiendas</title>
+        <link rel="stylesheet" href="{% static 'PanelTienda' %}">
+
+    <body>
+        <h1>Sucursales mostradas</h1>
+
+        <form method="post" action="{% url 'gestionTiendas:PanelTienda' %}">
+
+            <div>
+                <label>Dirección</label>
+                <input type="text" name="direccion">
+
+            </div>
+
+            <div>
+                <label>Provincia</label>
+                <input type="text" name="provincia">
+
+            </div>
+
+            <div>
+                <label>Región</label>
+                <input type="text" name="region" >
+
+            </div>
+
+            <div>
+                <label>Fecha de creación</label>
+                <input type="text" name="fechacrea">
+
+            </div>
+
+            <div>
+                <label>Telefono de contacto</label>
+                <input type="text" name="telefono">
+
+            </div>
+
+            <div>
+                <button type="submit">Registrar tienda</button>
+
+            </div>
+
+        </form>
+
+    </body>
+
+</html>

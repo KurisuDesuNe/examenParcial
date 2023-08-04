@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+        <title>Productos</title>
+        <link rel="stylesheet" href="{% static 'PanelProductos' %}">
+    <body>
+        <h1>Producto</h1>
+
+        <form method="post" action="{% url 'gestionTiendas:PanelProductos' %}"> 
+
+            {% csrf_token %}
+
+            <div>
+                <label>Descripción del producto</label>
+                <input type="text" name="descproducto">
+
+            </div>
+
+            <div>
+                <label>Codigo del producto </label>
+                <input type="text" name="codigo">
+            </div>
+
+
+            <div>
+                <label>Precio de venta del producto</label>
+                <input type="text" name="precioventa">
+            </div>
+
+            <div>
+                <label>Cantidad del producto</label>
+                <input type="text" name="cantidad">
+            </div>
+
+            <div>
+                <label>Tienda relacionada</label>
+                <input type="text" name="relacionada">
+            </div>
+
+            <div>
+                <button type="submit"> Registrar </button>
+
+            </div>
+
+        </form>
+
+        <div>
+            <div>
+                <h5>Productos en la tienda</h5>
+
+                {% for productos in listaProductos %}
+
+                <div>
+                    <h5>Nombre de usuario: {{productos.0}} </h5>
+                    <h5>Apellido de usuario: {{productos.1}} </h5>
+                </div>
+                {% endfor %}
+
+            </div>    
+            
+            
+        </div> 
+
+    </body>
+
+</html>
